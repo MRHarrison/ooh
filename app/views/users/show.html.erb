@@ -1,0 +1,14 @@
+<div class="profile" summary="Profile information">
+    <div class="sidebar round fluid">
+        <%= render 'shared/user_info' %>
+    </div>
+    <% if can? :read, @user %>
+    <div class="main fluid shadow">
+        <%= render 'basic_info_form' %>
+    </div>
+    <% else %>
+    <div id="fluid shadow">
+        <%= render 'basic_info' %>
+    </div>
+    <% end %>
+</div>

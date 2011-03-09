@@ -1,0 +1,25 @@
+<h1>Listing preregisters</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @preregisters.each do |preregister| %>
+  <tr>
+    <td><%= preregister.name %></td>
+    <td><%= preregister.email %></td>
+    <td><%= link_to 'Show', preregister %></td>
+    <td><%= link_to 'Edit', edit_preregister_path(preregister) %></td>
+    <td><%= link_to 'Destroy', preregister, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Preregister', new_preregister_path %>

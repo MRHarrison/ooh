@@ -1,0 +1,27 @@
+<h3 class="apply shadow fluid"><a class="activate_modal" name="first_window">Apply for Invite</a></h3>
+<div id='mask' class='close_modal'></div>
+
+    <div id='first_window' class='modal_window shadow'>    
+        <%= form_for("user", :url => user_registration_path) do |f| %>
+            <p><%= f.label :first_name %><p>
+            <p><%= f.text_field :first_name %></p>
+
+            <p><%= f.label :last_name %><p>
+            <p><%= f.text_field :last_name %></p>        
+
+            <p><%= f.label :email %></p>
+            <p><%= f.text_field :email %></p>
+
+            <p><%= f.label :password %></p>
+            <p><%= f.password_field :password %></p>
+
+            <p><%= f.label :password_confirmation %></p>
+            <p><%= f.password_field :password_confirmation %></p>
+
+            <p><%= f.submit "Sign up" %></p>
+        <% end %>
+        <h2>Or</h2>
+        <a href="/users/auth/facebook"><%= image_tag "fb-login-button.png", :class => "fluid shadow"%></a>
+        <h2>Or</h2>
+        <a href="/users/auth/facebook"><%= image_tag "twitter-login-button.png", :class => "fluid shadow"%></a>
+    </div>

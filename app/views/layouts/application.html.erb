@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+    	<title><%= title %></title>
+    	<%= csrf_meta_tag %>  
+    	<%= render 'layouts/stylesheets' %>
+    	<%= render 'layouts/javascripts' %>
+	</head>
+  <body>
+    <div class="container">
+    <% if user_signed_in? %>
+      <%= render 'layouts/header' %>
+     <% else%>
+      <%= render 'layouts/reg_header' %>
+     <% end %>
+      <section>
+		<% flash.each do |key, value| %>
+			<%= content_tag(:div, value, :class => "flash #{key}") %> 
+		<% end %>
+        <%= yield %>
+        <% unless 'root_path'%>
+        <%= yield :action_links %>
+        <% end %>
+      </section>
+          	<%= yield(:head) %>
+ 		    <%= debug(params) if Rails.env.development? %>
+    </div>
+  </body>
+</html>

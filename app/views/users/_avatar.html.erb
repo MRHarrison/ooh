@@ -1,0 +1,7 @@
+<%= form_for current_user, :html => { :multipart => true }  do |f| %>
+<%= render 'shared/error_messages', :object => f.object %>
+    <div class="field">
+        <%= f.file_field :avatar %>
+    </div>
+    <%= f.submit "Update"%>
+<% end %>

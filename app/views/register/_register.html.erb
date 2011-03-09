@@ -1,0 +1,17 @@
+<div class="people fluid">
+    <%= @users.each do |user| %>
+        <div id="expand"><%= image_tag user.avatar.url(:medium), :class => "shadow fluid" %></div>
+        <div id="collapse" class="bio shadow fluid"><%= user.bio %></div>
+    <% end %>
+</div>
+<div class="experience fluid shadow">
+    <h2 class="t-shadow">Be the first to experience OOH!</h2>
+    <h3 class="hip">Join the launch list</h3>
+    <div class="fluid form">
+    <%= render 'preregisters/form' %>
+    </div>
+</div>
+
+<div class="experience fluid">
+	<%= render 'register/experience' %>
+</div>

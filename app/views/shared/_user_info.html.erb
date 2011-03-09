@@ -1,0 +1,11 @@
+<div class="profile">
+  <a href="<%= user_path(current_user) %>">
+      <span class="user_name">
+      <h1><%= current_user.name %></h1></a>
+    </span>
+    <%= image_tag current_user.avatar.url(:medium) %>
+    <div>
+        <br/>
+        <%= current_user.bio %><br/>
+    </div>
+</div>

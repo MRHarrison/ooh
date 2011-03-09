@@ -1,0 +1,15 @@
+div.ticker{
+	position:absolute;
+	background:none;
+	margin: 15px 0 0 280px;
+}
+div.ticker a{
+	font-size:30px;
+	color: #eee !important;
+	font-weight: bold;
+	text-shadow: 1px 1px 5px rgba( 100, 100, 100, .8);
+} 
+ul#ticker{
+	list-style:none;
+	color: #eee !important;
+}

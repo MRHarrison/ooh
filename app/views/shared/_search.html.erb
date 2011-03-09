@@ -1,0 +1,16 @@
+<%= content_for(:head) do %>
+    <script>
+        $(funciton)() {
+          $("#products_search input").keyup(function() {
+            $.get($("#products_search").attr("action"), $("#users_search").serialize(), null, "script");
+            return false;
+          });
+        });
+    </script>
+<% end %>
+<div class="search fluid">
+<%= form_tag users_path, :method => 'get', :id => "users_search" do %>
+    <%= text_field_tag :search, params[:search], :placeholder => "Search", :class => "shadow" %>
+    <%= submit_tag "Search", :name => nil, :class => "blend shadow" %>
+<% end %>
+</div>

@@ -1,0 +1,37 @@
+<%= content_for(:head) do %>
+    <%= stylesheet_link_tag "ticker" %>
+<% end %>
+
+<header>	
+    <%= link_to "OOHLive!", root_path, :id => "logo", :class=> "title fluid t-shadow" %>
+    <% if user_signed_in? %>
+    <%= render 'shared/search' %>
+    <% else %>
+    <div class="ticker">
+    	<ul id="ticker">
+    	    <li><a href="#">is.. </a></li>
+    		<li><a href="#">is.. you and your friends</a></li>
+    		<li><a href="#">is.. sharing the net</a></li>
+    		<li><a href="#">is.. streaming content delivered</a></li>
+    		<li><a href="#">is.. your path discovered</a></li>
+    	</ul>
+    </div>
+    <% end %>
+  <nav class="shadow">
+    <ul>
+      	<li><%= link_to "Home", root_path %></li>
+      	<li><%= link_to "About", about_path %>
+      	<li><a class='activate_modal' name='second_window' href='#'>Sign in</a></li>
+	</ul>
+  </nav>
+</header>
+
+<div id='second_window' class='modal_window shadow'>
+    <h2>Welcome Back to OOHLive</h2>
+    <%= form_for("user", :url => user_session_path) do |f| %>
+      <%= f.text_field :email, :placeholder => "Email" %><br/>
+      <%= f.password_field :password, :placeholder => "Password" %><br/>
+      <%= f.submit 'Sign in', :class => "blend" %>
+    <% end %>
+</div>
+<div style="clear:both;"></div>

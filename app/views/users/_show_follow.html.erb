@@ -1,0 +1,4 @@
+<%= @users.each do |user| %>
+	<%= link_to image_tag(user.avatar.url(:thumb)), user, :id => "draggable", :class => "ui-widget-content" %>
+<% end %>
+<%= render 'menus/friend_menu' %>

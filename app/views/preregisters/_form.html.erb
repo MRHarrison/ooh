@@ -1,0 +1,24 @@
+<%= form_for(@preregister) do |f| %>
+  <% if @preregister.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@preregister.errors.count, "error") %> prohibited this preregister from being saved:</h2>
+
+      <ul>
+      <% @preregister.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :name, :placeholder => "Name" %>
+  </div>
+  <div class="field">
+    <%= f.text_field :email, :placeholder => "Email" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit", :class => "blend"%>
+    </div>
+<% end %>
+<div style="clear:both;"></div>

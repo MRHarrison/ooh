@@ -1,0 +1,10 @@
+<div class="sidebar shadow fluid">
+    <%= render 'shared/user_info' %>
+</div>
+<div class="fluid main">
+    <h1>All users</h1>
+        <div class="users">
+                <%= will_paginate @users %>
+                <%= render @users %>
+        </div> 
+</div>

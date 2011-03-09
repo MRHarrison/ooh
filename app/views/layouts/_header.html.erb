@@ -1,0 +1,27 @@
+<% content_for(:head) do %>
+<%= stylesheet_link_tag "jquery-ui" %>
+<% end %>
+
+<header>	
+    <%= link_to "OOHLive!", root_path, :id => "logo", :class=> "title fluid t-shadow" %>
+    <%= render 'shared/search' %>
+  <nav>
+  	<ul class="sf-menu shadow blend">
+            <li>
+    			<%= link_to "Home", root_path %>
+    		</li>
+			    <li class="current shadow">
+				<a href="#a">Account</a>
+				<ul>
+					<li><%= link_to "Settings", edit_user_registration_path(current_user) %></li>
+            	    <li><%= link_to "Edit Profile", user_path(current_user) %></li>
+            	    <li><%= link_to "Users", users_path %></li>
+            		<li><%= link_to "Sign out", destroy_user_session_path %></li>
+				</ul>
+			</li>
+            <li>
+                <div id="slider" class="fluid"></div>
+            </li>
+    </ul>
+  </nav>
+</header>

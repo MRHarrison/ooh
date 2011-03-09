@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @preregister.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @preregister.email %>
+</p>
+
+
+<%= link_to 'Edit', edit_preregister_path(@preregister) %> |
+<%= link_to 'Back', preregisters_path %>

@@ -1,0 +1,8 @@
+<a id="bgndVideo" href="http://www.youtube.com/watch?v=JwQZQygg3Lk" class="movie {opacity:1, isBgndMovie:{width:'window', mute:false}}">Bill Viola</a>
+<% if user_signed_in? %>
+        <%= render 'shared/apps' %>
+<% else %>
+	<div id="register">		
+        <%= render 'register/register' %>
+	</div>
+<% end %>

@@ -1,0 +1,49 @@
+<div class= "fluid">
+    <%= image_tag current_user.avatar.url(:small) %>
+
+<%= form_for(current_user) do |f| %>
+<%= render 'shared/error_messages', :object => f.object %>
+    <div class="field">
+        <h3>Change Profile Pic</h3>
+        <%= f.file_field :avatar %>
+    </div>
+        <%= render :partial => 'role_fields', :locals => { :f => f } %>
+    </div>
+        
+  <div class="fluid">  
+        <div class="field">
+          <%= f.label :bio %><br />
+          <%= f.text_area :bio, :class => "fluid" %>
+        </div>
+        <div class="field">
+          <%= f.label :sex %><br />
+          <%= f.text_field :sex %>
+        </div>
+        <div class="field">
+          <%= f.label :birthday %><br />
+          <%= date_select :birthday, :birth_date, :start_year => 1900 %>
+        </div>
+        <div class="field">
+          <%= f.label :hometown %><br />
+          <%= f.text_field :hometown %>
+        </div>
+        <div class="field">
+          <%= f.label :current_city %><br />
+          <%= f.text_field :current_city %>
+        </div>
+        <div class="field">
+          <%= f.label :looking_for %><br />
+          <%= f.text_field :looking_for %>
+        </div>
+        <div class="field">
+          <%= f.label :interested_in %><br />
+          <%= f.text_field :interested_in %>
+        </div>
+        <div class="field">
+          <%= f.label :favorite_quotations %><br />
+          <%= f.text_field :favorite_quotations %>
+        </div>
+  <%= f.submit "Update" %>
+  <% end %>
+  
+  </div>

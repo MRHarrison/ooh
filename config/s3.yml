@@ -1,0 +1,5 @@
+# config/s3.yml
+production:
+  access_key_id: AKIAJFCIZ4QXURGRBD5A
+  secret_access_key: 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
+  bucket: oohlive

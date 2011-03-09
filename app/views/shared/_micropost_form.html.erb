@@ -1,0 +1,14 @@
+<div class="message fluid">
+    <%= form_for @micropost do |f| %>
+      <%= render 'shared/error_messages', :object => f.object %>
+      <div class="field">
+        <%= f.text_field :first_name, :value => "@Name, Email, Phone #", :class => "shadow" %>
+      </div>
+      <div class="field">
+        <%= f.text_area :content, :value => "Write Message", :class => "shadow" %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Send" %>
+      </div>
+    <% end %>
+</div>

@@ -1,0 +1,85 @@
+<div class="front" summary="For signed-in users">
+	<div class="sidebar fluid shadow">
+        <%= render 'shared/user_info' %><br/>
+        <%= render 'users/avatar' %>
+        <%= render 'shared/stats' %>
+    </div>
+    
+<div class="apps fluid">
+<div class="fluid controlbar">
+    <div class="comm fluid">
+        <div id="expand"><h3 class="fluid blend shadow">Compose Message</h3></div>
+        <%= render 'messages/form'%>        
+    </div>
+    <div class="remote fluid">
+        <h3 class="fluid blend shadow">Mirror</h3>
+        <h3 class="fluid blend shadow">Pause</h3>
+        <h3 class="fluid blend shadow">Stop</h3>
+        <h3 class="fluid blend shadow">Next</h3>
+        <h3 class="fluid blend shadow">Mute</h3>
+        <h3 class="fluid blend shadow">Buy</h3>
+        <h3 class="fluid blend shadow">Visit</h3>
+        <h3 class="fluid blend shadow">Like</h3>
+        <h3 class="fluid blend shadow">Dislike</h3>
+    </div>
+</div>
+	<div class="message_box 1 fluid shadow">
+		 <div id="button1" class="button shadow"></div>
+            
+            <%= render 'messages/received_messages_list'%>
+            
+            <%= render 'menus/messages_menu' %>
+    </div>
+        
+        
+        <div class="square 6 fluid shadow">
+            <div id="button6" class="button shadow"></div>
+            <div class="shadow fluid">
+             <script type="text/javascript">
+                var _gwparam = _gwparam || [];
+                _gwparam["APIKEY"] = "ca0cd47917b73f01a84ca35f0d4e4036e2e2b062";
+                _gwparam["size"] = "160.600.lofimulti";
+                _gwparam["location"] = "";
+                _gwparam["bgcolor"] = "0099FF";
+                _gwparam["title"] = "undefined";
+                _gwparam["PID"] = "2983246";
+                _gwparam["AID"] = "10817648";
+                </script>
+                <script id="grouponAd" type="text/javascript" src="http://www.groupon.com/javascripts/common/affiliate_widget/grouponwidget.js"></script>
+                </div>
+                <%= render 'menus/bazaar_menu' %>
+		</div>
+        
+		<div class="square 2 fluid shadow">
+            <div id="button2" class="button shadow"></div>
+
+                       <%= render @collections %>               
+            <%= render 'menus/pictures_menu' %>
+		</div>
+		
+		<div class="square 3 fluid shadow">
+            <div id="button3" class="button shadow"></div>
+                <%= image_tag "musicvideo.jpg" %>
+            <%= render 'menus/music_menu' %>
+		</div>
+		<!--
+		<div class="square 4 fluid shadow">
+            <div id="button4" class="button shadow"></div>
+                <%= @users.each do |user| %>
+            		<%= link_to image_tag(user.avatar.url(:small)), user, :id => "draggable2", :class => "ui-widget-content" %>
+            	<% end %>
+                <%= render 'menus/friend_menu' %>
+		</div>
+		-->
+		<div class="square 5 fluid shadow">
+		    <div id="button5" class="button shadow"></div>
+		    
+		    <div id="droppable" class="fluid"><p>GAMEs</p></div>
+		    <div id="droppable" class="fluid"><p>QUIZZes</p></div>
+		    <div id="droppable" class="fluid"><p>TESTs</p></div>
+		    <div id="droppable" class="fluid"><p>HOBBIEs</p></div>
+            
+            <%= render 'menus/video_menu' %>
+		</div>
+	</div>
+</div>
